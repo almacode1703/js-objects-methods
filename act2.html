@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Math Object</title>
+</head>
+<body>
+
+    <form action="">
+        <input type="number" name="" id="value">
+        <select name="" id="choice">
+            <option value="Select"">Select Choice</option>
+            <option value="abs">ABS</option>
+            <option value="asin">SIN</option>
+            <option value="acos">COSIN</option>
+            <option value="atan">TAN</option>
+        </select>
+        <button onclick="displayMath(event)">SHOW</button>
+        <label for="" id="result"></label>
+    </form>
+
+    <script>
+         function displayMath(event){
+            event.preventDefault();
+            const value = Number(document.getElementById("value").value);
+            const choice = document.getElementById("choice").value;
+            if(!choice){
+                alert("Please select a choice");
+                return;
+            }
+
+            const result = Math[choice](value);
+            document.getElementById("result").innerHTML = result;
+         }
+
+    </script>
+</body>
+</html>

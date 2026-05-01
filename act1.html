@@ -1,59 +1,60 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Javascript Object Intro</title>
-        <style>
-         small {
-             background-color: yellow;
-             padding: 10px 12px;
-             display: block;
-             max-width: fit-content;
-         }
-        </style>
-    </head>
 
-    <body>
-        <h2>Display Students name & Age</h2>
-        <button onclick="displayDetails(event)">Click</button>
-        <p id="name"></p>
-        <p id="age"></p>
-        <strong id="address"></strong>
-        <small id="colors"></small>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Object Intro</title>
+    <style>
+        small {
+            background-color: yellow;
+            padding: 10px 12px;
+            display: block;
+            max-width: fit-content;
+        }
+    </style>
+</head>
 
-        <script>
-            const student_details = {
-                name: "John",
-                age: 20,
-                address: {
-                    city: "New York",
-                    state: "NY",
-                    country: function () {
-                        return "USA";
-                    },
-                    zip: function () {
-                        return "12345";
-                    },
-                    favColors: ["red", "green", "blue"],
+<body>
+    <h2>Display Students name & Age</h2>
+    <button onclick="displayDetails(event)">Click</button>
+    <p id="name"></p>
+    <p id="age"></p>
+    <strong id="address"></strong>
+    <small id="colors"></small>
+
+    <script>
+        const student_details = {
+            name: "John",
+            age: 20,
+            address: {
+                city: "New York",
+                state: "NY",
+                country: function () {
+                    return "USA";
                 },
-            };
+                zip: function () {
+                    return "12345";
+                },
+                favColors: ["red", "green", "blue"],
+            },
+        };
 
-            function displayDetails(event) {
-                document.getElementById("name").innerHTML =
-                    student_details.name;
-                document.getElementById("age").innerHTML = student_details.age;
-                document.getElementById("address").innerHTML =
-                    student_details.address.city +
-                    ", " +
-                    student_details.address.state +
-                    ", " +
-                    student_details.address.country() +
-                    ", " +
-                    student_details.address.zip();
-                document.getElementById("colors").innerHTML =
-                    student_details.address.favColors;
-            }
-        </script>
-    </body>
+        function displayDetails(event) {
+            document.getElementById("name").innerHTML =student_details.name;
+            document.getElementById("age").innerHTML = student_details.age;
+            document.getElementById("address").innerHTML =student_details.address.city +
+                ", " +
+                student_details.address.state +
+                ", " +
+                student_details.address.country() +
+                ", " +
+                student_details.address.zip();
+            
+            document.getElementById("colors").innerHTML =
+                student_details.address.favColors;
+        }
+    </script>
+</body>
+
 </html>
